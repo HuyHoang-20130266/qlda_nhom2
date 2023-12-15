@@ -2,20 +2,20 @@ package model;
 
 public class Question {
 	private int id;
-	String tenBCH;
 	String cauhoi;
+	String idCauhoi;
 	String quesA;
 	String quesB;
 	String quesC;
 	String quesD;
-	int status;
+	String status;
 	String img_ques;
 
-	public Question(int id, String tenBCH, String cauhoi, String quesA, String quesB, String quesC, String quesD,
-			int status, String img_ques) {
+	public Question(int id, String cauhoi, String idCauhoi, String quesA, String quesB, String quesC, String quesD,
+			String status, String img_ques) {
 		super();
 		this.id = id;
-		this.tenBCH = tenBCH;
+		this.idCauhoi = idCauhoi;
 		this.cauhoi = cauhoi;
 		this.quesA = quesA;
 		this.quesB = quesB;
@@ -25,12 +25,12 @@ public class Question {
 		this.img_ques = img_ques;
 	}
 
-	public String getTenBCH() {
-		return tenBCH;
+	public int getId() {
+		return id;
 	}
 
-	public void setTenBCH(String tenBCH) {
-		this.tenBCH = tenBCH;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getCauhoi() {
@@ -39,6 +39,14 @@ public class Question {
 
 	public void setCauhoi(String cauhoi) {
 		this.cauhoi = cauhoi;
+	}
+
+	public String getIdCauhoi() {
+		return idCauhoi;
+	}
+
+	public void setIdCauhoi(String idCauhoi) {
+		this.idCauhoi = idCauhoi;
 	}
 
 	public String getQuesA() {
@@ -73,11 +81,11 @@ public class Question {
 		this.quesD = quesD;
 	}
 
-	public int getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
@@ -87,17 +95,6 @@ public class Question {
 
 	public void setImg_ques(String img_ques) {
 		this.img_ques = img_ques;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	@Override
-	public String toString() {
-		return "Question [id=" + id + ", tenBCH=" + tenBCH + ", cauhoi=" + cauhoi + ", quesA=" + quesA + ", quesB="
-				+ quesB + ", quesC=" + quesC + ", quesD=" + quesD + ", status=" + status + ", img_ques=" + img_ques
-				+ "]";
 	}
 
 }

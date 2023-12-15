@@ -117,21 +117,21 @@
 
 
         %>
-        <img src="${pageContext.request.contextPath}\<%=question1.getImage()%>" alt="">
+        <img src="${pageContext.request.contextPath}\img\<%=question1.getImage()%>" alt="">
         <div class="stt"><%=question1.getId()%></div>
-        <div class="question" style="font-size: 25px;"><h2><%=question1.getQuestion()%></h2></div>
+        <div class="question" style="font-size: 25px;"><h2><%=question1.getIdQuestions()%></h2></div>
     </div>
 
     <div class="answer2">
         <div class="score" id="diem"><%=score%></div>
         <div class="items">
-            <div class="item"> A: <%=question1.getQuesA()%>
+            <div class="item"> A: <%=question1.getAnswerA()%>
             </div>
-            <div class="item"> B: <%=question1.getQuesB()%>
+            <div class="item"> B: <%=question1.getAnswerB()%>
             </div>
-            <div class="item"> C: <%=question1.getQuesC()%>
+            <div class="item"> C: <%=question1.getAnswerC()%>
             </div>
-            <div class="item"> D: <%=question1.getQuesD()%>
+            <div class="item"> D: <%=question1.getAnswerD()%>
             </div>
         </div>
     </div>
@@ -181,25 +181,12 @@
         });
     });
 
-    // Lấy ra thời gian chơi
 
-        let startTime = 0;
-        let endTime = 0;
 
-        function startTimer() {
-        startTime = new Date().getTime();
-    }
-        function stopTimerAndRedirect() {
-            endTime = new Date().getTime();
-            const timeSpentInSeconds = (endTime - startTime) / 1000;
-            window.location.href = 'result.jsp?time=' + timeSpentInSeconds;
-        }
 
-    function userCompletedGame() {
-        stopTimerAndRedirect();
-    }
 
-    // Gắn onclick cho cho button có stt cuối onclick="userCompletedGame()"
+
+
 </script>
 
 </body>

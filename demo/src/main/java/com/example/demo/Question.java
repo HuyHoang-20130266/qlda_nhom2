@@ -3,11 +3,25 @@ package com.example.demo;
 public class Question {
     private int id;
     private String question;
-    private String quesA;
-    private String quesB;
-    private String quesC;
-    private String quesD;
-    private String status;
+    private String idQuestions;
+    private String answerA;
+    private String answerB;
+    private String answerC;
+    private String answerD;
+    private String AnswerCorrect;
+    private String image;
+
+    public Question(int id, String question, String idQuestions, String answerA, String answerB, String answerC, String answerD, String answerCorrect, String image) {
+        this.id = id;
+        this.question = question;
+        this.idQuestions = idQuestions;
+        this.answerA = answerA;
+        this.answerB = answerB;
+        this.answerC = answerC;
+        this.answerD = answerD;
+        this.AnswerCorrect = answerCorrect;
+        this.image = image;
+    }
 
     public int getId() {
         return id;
@@ -25,44 +39,52 @@ public class Question {
         this.question = question;
     }
 
-    public String getQuesA() {
-        return quesA;
+    public String getIdQuestions() {
+        return idQuestions;
     }
 
-    public void setQuesA(String quesA) {
-        this.quesA = quesA;
+    public void setIdQuestions(String idQuestions) {
+        this.idQuestions = idQuestions;
     }
 
-    public String getQuesB() {
-        return quesB;
+    public String getAnswerA() {
+        return answerA;
     }
 
-    public void setQuesB(String quesB) {
-        this.quesB = quesB;
+    public void setAnswerA(String answerA) {
+        this.answerA = answerA;
     }
 
-    public String getQuesC() {
-        return quesC;
+    public String getAnswerB() {
+        return answerB;
     }
 
-    public void setQuesC(String quesC) {
-        this.quesC = quesC;
+    public void setAnswerB(String answerB) {
+        this.answerB = answerB;
     }
 
-    public String getQuesD() {
-        return quesD;
+    public String getAnswerC() {
+        return answerC;
     }
 
-    public void setQuesD(String quesD) {
-        this.quesD = quesD;
+    public void setAnswerC(String answerC) {
+        this.answerC = answerC;
     }
 
-    public String getStatus() {
-        return status;
+    public String getAnswerD() {
+        return answerD;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setAnswerD(String answerD) {
+        this.answerD = answerD;
+    }
+
+    public String getAnswerCorrect() {
+        return AnswerCorrect;
+    }
+
+    public void setAnswerCorrect(String answerCorrect) {
+        AnswerCorrect = answerCorrect;
     }
 
     public String getImage() {
@@ -73,18 +95,18 @@ public class Question {
         this.image = image;
     }
 
-    private String image;
-
-    public Question(int id, String question, String quesA, String quesB, String quesC, String quesD, String status, String image){
-        this.id = id;
-        this.question = question;
-        this.quesA = quesA;
-        this.quesB = quesB;
-        this.quesC = quesC;
-        this.quesD = quesD;
-        this.status = status;
-        this.image = image;
+    @Override
+    public String toString() {
+        return "Question{" +
+                "id=" + id +
+                ", question='" + question + '\'' +
+                ", idQuestions='" + idQuestions + '\'' +
+                ", answerA='" + answerA + '\'' +
+                ", answerB='" + answerB + '\'' +
+                ", answerC='" + answerC + '\'' +
+                ", answerD='" + answerD + '\'' +
+                ", AnswerCorrect='" + AnswerCorrect + '\'' +
+                ", image='" + image + '\'' +
+                '}';
     }
-
-
 }

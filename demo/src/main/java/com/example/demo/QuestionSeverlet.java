@@ -23,6 +23,7 @@ public class QuestionSeverlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         List<Question> questions = QuestionDao.getInstance().getQuestions();
 
+
         // Đặt danh sách câu hỏi vào thuộc tính của request để truyền cho JSP
         request.setAttribute("questions", questions);
 

@@ -53,16 +53,25 @@
 								style="margin-top: 10px; margin-bottom: 10px; width: 90%; height: 90%; margin-left: 10px;"
 								src="img/exam.png">
 							<div class=" bg-warning">
-								<a href="bocauhoi_detail?name=${bocauhoi.getTenBoCauHoi()}"
+								<a href="bocauhoi_detail?idBCH=${bocauhoi.getId()}&tenBCH=${bocauhoi.getTenBoCauHoi()}"
 									class="card-text text-decoration-none text-dark">
 									<div class="text">
-										<span>ID: ${bocauhoi.getId()}
-											${bocauhoi.getTenBoCauHoi()}</span>
+										<span> ${bocauhoi.getTenBoCauHoi()}</span>
 									</div>
 								</a>
 							</div>
 						</div>
+						<div class="py-5">
+							<form action="crud" method="post">
+								<input name="action" value="xoaBCH" type="hidden"> <input
+									class="" style="width: 40%;" type="hidden" name="idBCH"
+									value="${bocauhoi.getId()}">
+								<button class="btn btn-primary" type="submit">Delete</button>
+							</form>
+						</div>
+
 					</div>
+
 				</c:forEach>
 
 			</div>
@@ -72,19 +81,11 @@
 	<footer
 		class="container-md align-content-lg-end d-flex justify-content-between">
 		<div class=""></div>
-		<div class="a">
-			<form action="crud" method="post">
-				<input name="action" value="xoaBCH" type="hidden"> <input
-					class="" style="width: 40%;" type="text"
-					placeholder="nhap ID muon xia" name="idBCH">
-				<button class="btn btn-primary" type="submit">Delete</button>
-			</form>
-
-		</div>
-		<div class="a">
+		<div class=""></div>
+		<div class="">
 			</button>
 		</div>
-		<div class="a">
+		<div class="">
 			<form action="crud" method="post">
 				<input name="action" value="themBCH" type="hidden"> <input
 					class="" style="width: 40%;" type="text"

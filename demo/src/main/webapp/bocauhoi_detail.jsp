@@ -64,11 +64,11 @@
 					</div>
 
 				</div>
-				
+
 				<!-- <div class="themcauhoi form-control" style="margin-top: 50px;">
 					<input type="file" value="">
 				</div> -->
-				
+
 			</div>
 			<div class="col-9  text-center ">
 				<div class="tab-content">
@@ -106,13 +106,12 @@
 											<div class="dapan">A. ${ques.getQuesA() }</div>
 											<div class="dung">
 
-												<c:if test="${ques.getStatus()==1}">
-													<input type="radio" name id="1" checked="checked">
+												<c:if test="${bchDAO.cv(ques.getStatus().trim())==1}">
+													<input type="radio" name id="1" value="1" checked="checked">
 												</c:if>
-												<c:if test="${ques.getStatus()!=1}">
-													<input type="radio" name id="1">
+												<c:if test="${bchDAO.cv(ques.getStatus().trim())!=1}">
+													<input type="radio" name id="1" value="1">
 												</c:if>
-
 											</div>
 
 										</div>
@@ -120,13 +119,12 @@
 											style="width: 500px; margin-left: 200px;">
 											<div class="dapan">B. ${ques.getQuesB()}</div>
 											<div class="dung">
-												<c:if test="${ques.getStatus()==2}">
-													<input type="radio" name id="2" checked="checked">
+												<c:if test="${bchDAO.cv(ques.getStatus().trim())==2}">
+													<input type="radio" name id="2" value="2" checked="checked">
 												</c:if>
-												<c:if test="${ques.getStatus()!=2}">
-													<input type="radio" name id="2">
+												<c:if test="${bchDAO.cv(ques.getStatus().trim())!=2}">
+													<input type="radio" name id="2" value="2">
 												</c:if>
-
 											</div>
 
 										</div>
@@ -138,13 +136,13 @@
 											style="width: 500px;">
 											<div class="dapan">C. ${ques.getQuesC()}</div>
 											<div class="dung">
-												<c:if test="${ques.getStatus()==3}">
-													<input type="radio" name id="3" checked="checked">
+												<c:if test="${bchDAO.cv(ques.getStatus().trim())==3}">
+													<input type="radio" name="" id="3" value="3"
+														checked="checked">
 												</c:if>
-												<c:if test="${ques.getStatus()!=3}">
-													<input type="radio" name id="3">
+												<c:if test="${bchDAO.cv(ques.getStatus().trim())!=3}">
+													<input type="radio" name id="3" value="3">
 												</c:if>
-
 											</div>
 
 										</div>
@@ -154,28 +152,36 @@
 												<p>D. ${ques.getQuesD()}</p>
 											</div>
 											<div class="dung">
-												<c:if test="${ques.getStatus()==4}">
-													<input type="radio" name id="4" checked="checked">
+												<c:if test="${bchDAO.cv(ques.getStatus().trim())==4}">
+													<input type="radio" name id="4" value="4" checked="checked">
 												</c:if>
-												<c:if test="${ques.getStatus()!=4}">
-													<input type="radio" name id="4">
+												<c:if test="${bchDAO.cv(ques.getStatus().trim())!=4}">
+													<input type="radio" name id="4" value="4">
 												</c:if>
-
 											</div>
 
 										</div>
 									</div>
 								</div>
-								<div class="container-fluid py-5" style="margin-top: 50px;">
-									<div class="d-flex align-bottom justify-content-between">
-										<p></p>
-										<button type class="btn btn-secondary">DELETE</button>
-										<!-- <button type class="btn btn-secondary">CREATE</button> -->
-										<p></p>
 
+								<form action="crud" method="post">
+									<div class="container-fluid py-5" style="margin-top: 50px;">
+										<input type="hidden" name="tenBCH" value="${tenBCH}">
+										<input type="hidden" name="idBCH" value="${idBCH}"> <input
+											type="hidden" name="action" value="xoaCH"> <input
+											type="hidden" value="${ques.getId()}" name="idQuestion">
+										<div class="d-flex align-bottom justify-content-between">
+											<p></p>
+
+											<button type="submit" class="btn btn-secondary">DELETE</button>
+											<!-- <button type class="btn btn-secondary">CREATE</button> -->
+											<p></p>
+
+										</div>
+										<!--dap an end-->
 									</div>
-									<!--dap an end-->
-								</div>
+								</form>
+
 
 							</div>
 							<!--quest-->
@@ -202,6 +208,7 @@
 									<!--cau hoi-->
 
 									<input type="hidden" name="tenBCH" value="${tenBCH}"> <input
+										type="hidden" name="idBCH" value="${idBCH}"> <input
 										type="hidden" name="action" value="themCH">
 									<div class=" text-start" style="height: 100px;">
 										<textarea class="form-control" name="cauhoi" id=""
@@ -216,7 +223,7 @@
 													placeholder="Thêm một đáp án bất kì"></textarea>
 
 												<div class="dung">
-													<input type="radio" name="status" id="1" value="1">
+													<input type="radio" name="status" id="1" value="A">
 												</div>
 
 											</div>
@@ -227,7 +234,7 @@
 													placeholder="Thêm một đáp án bất kì"></textarea>
 
 												<div class="dung">
-													<input type="radio" name="status" id="2" value="2">
+													<input type="radio" name="status" id="2" value="B">
 												</div>
 
 											</div>
@@ -241,7 +248,7 @@
 													placeholder="Thêm một đáp án bất kì"></textarea>
 
 												<div class="dung">
-													<input type="radio" name="status" id="3" value="3">
+													<input type="radio" name="status" id="3" value="C">
 												</div>
 
 											</div>
@@ -252,7 +259,7 @@
 													placeholder="Thêm một đáp án bất kì"></textarea>
 
 												<div class="dung">
-													<input type="radio" name="status" id="4" value="4">
+													<input type="radio" name="status" id="4" value="D">
 												</div>
 
 											</div>

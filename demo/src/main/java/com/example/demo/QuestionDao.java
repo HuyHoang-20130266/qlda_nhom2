@@ -22,7 +22,7 @@ public class QuestionDao {
     public  List<Question> getQuestions() {
 
             List<Question> questions = new ArrayList<>();
-            String query = "SELECT * FROM questions"; // Thay đổi tên bảng và cột tương ứng trong cơ sở dữ liệu của bạn
+            String query = "SELECT * FROM question"; // Thay đổi tên bảng và cột tương ứng trong cơ sở dữ liệu của bạn
 
             try {
                 Statement s = connect.createStatement();
@@ -32,13 +32,16 @@ public class QuestionDao {
                 while (resultSet.next()) {
                     int id = resultSet.getInt("id");
                     String question = resultSet.getString("question");
-                    String quesA = resultSet.getString("quesA");
-                    String quesB = resultSet.getString("quesB");
-                    String quesC = resultSet.getString("quesC");
-                    String quesD = resultSet.getString("quesD");
-                    String status = resultSet.getString("status");
+                    String answerA = resultSet.getString("answerA");
+                    String answerB = resultSet.getString("answerB");
+                    String answerC = resultSet.getString("answerC");
+                    String answerD = resultSet.getString("answerD");
+                    String idQuestions = resultSet.getString("idQuestions");
                     String image = resultSet.getString("image");
-                    Question q = new Question(id,question,quesA,quesB,quesC,quesD,status,image);
+                    String answerCorrect = resultSet.getString("answerCorrect");
+
+                    Question q = new Question(id,idQuestions,question,answerA,answerB,answerC,answerD,answerCorrect,image);
+                    System.out.println(q);
                     questions.add(q);
                 }
             } catch (SQLException e) {

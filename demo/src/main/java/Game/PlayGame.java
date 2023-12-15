@@ -22,29 +22,32 @@ public class PlayGame extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         String selectedAnswer = request.getParameter("selectedAnswer");
+        System.out.println(selectedAnswer);
         int id = Integer.parseInt(request.getParameter("id"));
         int score = Integer.parseInt(request.getParameter("score"));
-        System.out.println("Score "+score);
+
         List<Question> questions = QuestionDao.getInstance().getQuestions();
         Question q = null;
         a:for (Question ques: questions) {
             if(ques.getId()==id){
                 q = ques;
+                System.out.println(q.getAnswerCorrect());
                 break a;
+
             }
         }
 
 //        System.out.println(q.getStatus()+"   here");
 //        System.out.println(selectedAnswer.substring(0,1));
-        session.setAttribute("number",id-1);
-        System.out.println("Cau hoi:" + id);
-        boolean check = q.getStatus().equals(selectedAnswer.substring(0,1).trim());
-        if(q.getStatus().equals(selectedAnswer.substring(0,1).trim())){
+        session.setAttribute("number",id);
+
+        boolean check = q.getAnswerCorrect().equals(selectedAnswer.substring(0,1).trim());
+        if(q.getAnswerCorrect().equals(selectedAnswer.substring(0,1).trim())){
 
             response.setContentType("text/plain");
 
 
-            score +=10;
+
             diem +=10;
             System.out.println(diem);
             String jsonData = "{ \"flag\": " + true + ", \"value\": " + diem + " }";
@@ -66,5 +69,9 @@ public class PlayGame extends HttpServlet {
 
 
         // Gửi phản hồi về client (nếu cần)
+
+
+
+
     }
 }
