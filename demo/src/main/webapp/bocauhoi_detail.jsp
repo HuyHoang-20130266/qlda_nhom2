@@ -19,6 +19,7 @@
 	crossorigin="anonymous"></script>
 <title>Document</title>
 <style>
+
 </style>
 </head>
 <body>
@@ -116,7 +117,7 @@
 
 										</div>
 										<div class="col-7 col-sm-4 form-control shadow"
-											style="width: 500px; margin-left: 200px;">
+											style="width: 500px;">
 											<div class="dapan">B. ${ques.getQuesB()}</div>
 											<div class="dung">
 												<c:if test="${bchDAO.cv(ques.getStatus().trim())==2}">
@@ -147,7 +148,7 @@
 
 										</div>
 										<div class="col-7 col-sm-4 form-control shadow"
-											style="width: 500px; margin-left: 200px;">
+											style="width: 500px;">
 											<div class="dapan">
 												<p>D. ${ques.getQuesD()}</p>
 											</div>
