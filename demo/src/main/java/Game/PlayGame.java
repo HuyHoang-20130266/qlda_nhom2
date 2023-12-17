@@ -2,17 +2,14 @@ package Game;
 
 import com.example.demo.Question;
 import com.example.demo.QuestionDao;
-import com.mysql.cj.xdevapi.JsonString;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import netscape.javascript.JSObject;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "answer", value = "/answer")
