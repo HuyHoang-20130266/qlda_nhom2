@@ -23,6 +23,20 @@
         margin: 0px;
         padding: 0px;
     }
+    body{
+        background-image: url('${pageContext.request.contextPath}\\img\\bg2.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     section
     {
         /* padding: 0 100px; */
