@@ -198,7 +198,7 @@
 										<div class="  form-control shadow"
 											style="width: 600px; height: 300px;">
 											<div class>
-												<div class="card-body " id="img">
+												<div class="card-body " id="img1">
 													<input type="file" placeholder="" name="file">
 												</div>
 											</div>
@@ -219,22 +219,22 @@
 										<div class="row py-4 text-start">
 											<div class="col-7 col-sm-4 " style="width: 500px;">
 												<div class="dapan">A.</div>
-												<textarea class="form-control" name="dapanA" id=""
+												<textarea class="form-control" name="dapanA"
 													placeholder="Thêm một đáp án bất kì"></textarea>
 
 												<div class="dung">
-													<input type="radio" name="status" id="1" value="A">
+													<input type="radio" name="status" value="A">
 												</div>
 
 											</div>
 											<div class="col-7 col-sm-4 "
 												style="width: 500px; margin-left: 200px;">
 												<div class="dapan">B.</div>
-												<textarea class="form-control" name="dapanB" id=""
+												<textarea class="form-control" name="dapanB"
 													placeholder="Thêm một đáp án bất kì"></textarea>
 
 												<div class="dung">
-													<input type="radio" name="status" id="2" value="B">
+													<input type="radio" name="status" value="B">
 												</div>
 
 											</div>
@@ -244,22 +244,22 @@
 
 											<div class="col-7 col-sm-4 " style="width: 500px;">
 												<div class="dapan">C.</div>
-												<textarea class="form-control" name="dapanC" id=""
+												<textarea class="form-control" name="dapanC"
 													placeholder="Thêm một đáp án bất kì"></textarea>
 
 												<div class="dung">
-													<input type="radio" name="status" id="3" value="C">
+													<input type="radio" name="status" value="C">
 												</div>
 
 											</div>
 											<div class="col-7 col-sm-4 "
 												style="width: 500px; margin-left: 200px;">
 												<div class="dapan">D.</div>
-												<textarea class="form-control" name="dapanD" id=""
+												<textarea class="form-control" name="dapanD"
 													placeholder="Thêm một đáp án bất kì"></textarea>
 
 												<div class="dung">
-													<input type="radio" name="status" id="4" value="D">
+													<input type="radio" name="status" value="D">
 												</div>
 
 											</div>
